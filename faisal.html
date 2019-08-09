@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Faisal is Website</title>
+    </head>
+   <style>
+       div{
+           text-align: center;
+       }
+    .p1{
+        color: red;
+    }
+    body{background-color: rgb(150, 125, 125)}
+        .checked{
+          text-decoration: line-through;
+        }
+ 
+   </style>
+ 
+   
+ 
+    <body>
+        <h1 id = "Header">Faisal's Hobbies</h1>
+        <input id= "userInput" type="text" placeholder= "choose a color">
+        <button id = "colorChange">Change Color</button>
+       
+      
+       
+        <p >I like to play on my playstaion
+            <br>Boxing
+            <br>go out with my friends
+        </p>
+        <a href ="https://themoneyteam.com/" >My favourite boxer is Floyd Mayweather</a>
+         <p class= "p1">Floyd Mayweather was the highest payed boxer with a networth of around $1 Billion making him the highest paid athlete in history</p>
+        <p class = "p1">Floyed Mayweather's Record 
+                <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Wins</th>
+                            <th scope="col">KO</th>
+                            <th scope="col">Losses</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Record</th>
+                            <td>50</td>
+                            <td>27</td>
+                            <td>0</td>
+                          </tr>
+                          </tbody>
+                          <p>what are your hobbies?</p>
+                          <input type = "text" id = "input">
+                          <button id = "addBtn">Add</button>
+                          <div id = "content1"></div> 
+
+                        
+                        
+           
+         </p>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/s7_PsU59Yeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         <div> <img src = "floyd image.jpg"></div>
+         <script>
+          document.getElementById('colorChange').addEventListener ('click',function(){
+          document.getElementById('Header').style.color = document.getElementById("userInput").value;
+         
+          })
+          document.getElementById('content1').innerHTML = localStorage.getItem('myList')
+            document.getElementById('addBtn').addEventListener('click',function(){
+                var a = document.createElement('li')
+               a.append(document.getElementById('input').value)
+    
+                var b = document.createElement('button')
+                b.addEventListener('click', removeItem)
+                b.innerHTML = "X"
+                a.append(b)
+                
+                var c = document.createElement('input')
+                c.setAttribute('type','checkbox')
+                c.addEventListener('change', checkItem)
+                a.append(c)
+
+                document.getElementById('content1').append(a)
+                localStorage.setItem('myList', document.getElementById('content1').innerHTML)
+            })
+            function removeItem(){
+                this.parentNode.remove()
+            }
+            function checkItem(){
+              this.parentNode.classlist.toggle('checked')
+            }
+
+      </script>
+    </body>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GeOUZ_pIwB4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+</html>
+ 
